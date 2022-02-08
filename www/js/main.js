@@ -27,6 +27,14 @@ window.onload = async function() {
 
 };
 
+var logging = false;
+window.addEventListener('keydown', function (e) {
+  if(e.key == "1" && logging == false)
+  {logging = true;webgazer.logCoordinates(true,'experiment_'+Date.now());}
+  else if(e.key == "2")
+  {logging = false;webgazer.logCoordinates(false,'none');};
+}, false);
+
 // Set to true if you want to save the data even if you reload the page.
 window.saveDataAcrossSessions = true;
 
